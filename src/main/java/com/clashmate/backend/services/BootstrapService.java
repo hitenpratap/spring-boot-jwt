@@ -40,8 +40,6 @@ public class BootstrapService implements InitializingBean {
 
         bootstrap.createTenant();
 
-        bootstrap.createSuperAdmin();
-
         LOG.info("...Bootstrapping completed");
     }
 
