@@ -61,25 +61,4 @@ public class Bootstrap {
         }
     }
 
-    public void createSuperAdmin() {
-        if (superAdminRepository.countByEmailAddress("hitenpratap99@gmail.com") == 0) {
-            SuperAdmin superAdmin = new SuperAdmin();
-            superAdmin.setEmailAddress("hitenpratap99@gmail.com");
-            superAdmin.setPassword(passwordEncoder.encode("clashMate@123#"));
-            superAdmin.setFirstName("Hiten Pratap");
-            superAdmin.setLastName("Singh");
-            superAdminRepository.save(superAdmin);
-            userRoleRepository.save(new UserRole(superAdmin, roleRepository.findByName(appConstant.ROLE_SUPER_ADMIN).get()));
-        }
-        if (superAdminRepository.countByEmailAddress("kp03015@gmail.com") == 0) {
-            SuperAdmin superAdmin = new SuperAdmin();
-            superAdmin.setEmailAddress("kp03015@gmail.com");
-            superAdmin.setPassword(passwordEncoder.encode("clashMate@123#"));
-            superAdmin.setFirstName("Kshitij");
-            superAdmin.setLastName("Panghaal");
-            superAdminRepository.save(superAdmin);
-            userRoleRepository.save(new UserRole(superAdmin, roleRepository.findByName(appConstant.ROLE_SUPER_ADMIN).get()));
-        }
-    }
-
 }
